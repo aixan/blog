@@ -11,7 +11,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-7taauo1*_e!k46pv-xhgdse1^-_bs&^)p570&v)ouylqvd%ehy'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -117,11 +117,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
+# 静态文件收集目录
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
 # 前端位置
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'frontend/dist')]
-# 静态文件收集目录
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+# 媒体资源
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
